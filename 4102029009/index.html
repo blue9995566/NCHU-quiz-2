@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jquery</title>
+    <script src="jquery-1.7.1.js"></script>
+    <style type="text/css">
+        .changed {
+            color: red;
+			font-size: 15pt;
+        }
+
+    </style>
+    <script language="JavaScript">
+        $(document).ready(function() {
+			$('#a').click(function(event) {
+				list=$('li');
+				list[0].innerHTML="HTML5";
+				list[1].innerHTML="CSS3";
+				$('ul').append("<li>MYSQL</li>"); 
+                }
+            );
+			$('#b').click(function(event) {
+				$('li').mouseenter(function(event) {
+				$(this).addClass('changed');
+				});
+				$('li').mouseout(function(event) {
+				$(this).removeClass('changed');
+				});
+                }
+            );
+			
+			$('#c').click(function(event) {
+				$('h1')[0].innerHTML="Web Programming_4102029009";
+                }
+            );
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Web Programming</h1>
+	<hr>
+	<h3>Content</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>DOM</li>
+        <li>JavaScript</li>
+        <li>JSP</li>
+    </ul>
+	<input type="button" id="a" value="以JS更改元素內容"/>
+	<input type="button" id="b" value="以JQuery更改CSS"/>
+	<input type="button" id="c" value="更改標題"/>
+</body>
+
+</html>
